@@ -1,8 +1,11 @@
 package id.my.hendisantika.loaddata.service;
 
+import id.my.hendisantika.loaddata.entity.Student;
 import id.my.hendisantika.loaddata.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,7 +30,12 @@ public class LoadDataIntoDB {
         while(start < 100000) {
             List<Student> student = getNextStudentBatch(start);
             start+=batch;
-            dbRepo.saveAll(student);
+            studentRepository.saveAll(student);
         }
+    }
+
+    public List<Student> fetchAll() {
+        return dbRepo.findAll();
+
     }
 }
