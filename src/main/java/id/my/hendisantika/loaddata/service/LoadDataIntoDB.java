@@ -25,12 +25,12 @@ public class LoadDataIntoDB {
     private final StudentRepository studentRepository;
 
     private final int batch = 1000;
-    private final int start = 0;
+    private int start = 0;
 
     public void saveData() {
         while(start < 100000) {
             List<Student> student = getNextStudentBatch(start);
-            start+=batch;
+            start += batch;
             studentRepository.saveAll(student);
         }
     }
