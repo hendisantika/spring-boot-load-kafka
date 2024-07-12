@@ -64,7 +64,7 @@ public class StudentController {
     @Operation(
             summary = "Send Student Data to KAFKA",
             description = "Send Student Data to KAFKA.",
-            tags = {"Tutorial"})
+            tags = {"Student"})
     @ApiResponses(value = {
             @io.swagger.v3.oas.annotations.responses.ApiResponse(
                     description = "Success",
