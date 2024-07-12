@@ -80,6 +80,8 @@ public class StudentController {
     )
     public void sendToKafka() {
         List<Student> list = ldb.fetchAll();
+        log.info("---> Fetched {} students", list.size());
+        list.forEach(System.out::println);
         list.stream().forEach(x -> template.send(topic.name(),x));
     }
 }
