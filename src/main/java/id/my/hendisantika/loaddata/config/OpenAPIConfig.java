@@ -22,7 +22,7 @@ public class OpenAPIConfig {
     public OpenAPI openAPI(@Value("${application-description}") String appDescription, @Value("${application" +
             "-version}") String appVersion) {
         OpenAPI openAPI = new OpenAPI();
-        openAPI.addServersItem(new Server().url("https://test.jvm.my.id"))
+        openAPI.addServersItem(new Server().url("https://test.jvm.my.id"));
         openAPI.info(new io.swagger.v3.oas.models.info.Info()
                 .title("Load Kafka Service API")
                 .description(appDescription)
